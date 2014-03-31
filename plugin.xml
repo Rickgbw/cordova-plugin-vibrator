@@ -24,7 +24,7 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/Vibrator.java" target-dir="com/vibrationapps/vibrator" />
+        <source-file src="src/android/Vibrator.java" target-dir="src/com/vibrationapps/vibrator" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.VIBRATE"/>
