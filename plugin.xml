@@ -2,29 +2,29 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.vibrationapps.vibrator"
+    id="com.vibrationapps.vibration"
     version="0.0.1">
 
-    <name>Vibrator</name>
+    <name>Vibration</name>
     <description>A Better Cordova Vibration Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,vibration,vibrator,vibrate</keywords>
     <repo>https://github.com/Rickgbw/cordova-plugin-vibrator.git</repo>
     <issue>https://github.com/Rickgbw/cordova-plugin-vibrator/issues</issue>
 
-    <js-module src="www/vibrator.js" name="vibrator">
-        <clobbers target="window.vibrator"/>
+    <js-module src="www/vibration.js" name="vibration">
+        <clobbers target="window.vibration"/>
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Vibrator">
-                <param name="android-package" value="com.vibrationapps.Vibrator"/>
+            <feature name="Vibration">
+                <param name="android-package" value="com.vibrationapps.vibration"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/Vibrator.java" target-dir="src/com/vibrationapps/vibrator" />
+        <source-file src="src/android/Vibration.java" target-dir="src/com/vibrationapps" />
 
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.VIBRATE"/>

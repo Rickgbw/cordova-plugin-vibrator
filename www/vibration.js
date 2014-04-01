@@ -34,14 +34,14 @@ module.exports = {
      */
     vibrate: function(val,repeat) {
     	if(val instanceof Array)
-    		exec(null, null, "Vibrator", "vibrateArr", [val,repeat]);
+    		exec(null, null, "Vibration", "vibrateArr", [val,repeat]);
     	else
-        	exec(null, null, "Vibrator", "vibrate", [val]);
+        	exec(null, null, "Vibration", "vibrate", [val]);
     },
     cancel: function(mills) {
-        exec(null, null, "Vibrator", "cancel", [mills]);
+        exec(null, null, "Vibration", "cancel", [mills]);
     },
     hasVibrator: function() {
-        exec(null, null, "Vibrator", "hasVibrator", []);
+        exec(null, null, "Vibration", "hasVibrator", []);
     },
 };

@@ -16,7 +16,7 @@
        specific language governing permissions and limitations
        under the License.
 */
-package com.vibrationapps.vibrator;
+package com.vibrationapps;
 
 import java.util.ArrayList;
 
@@ -30,12 +30,12 @@ import android.os.Vibrator;
 /**
  * This class provides access to vibration on the device.
  */
-public class Vibrator extends CordovaPlugin {
+public class Vibration extends CordovaPlugin {
 
     /**
      * Constructor.
      */
-    public Vibrator() {
+    public Vibration() {
     }
 
     /**

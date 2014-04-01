@@ -17,6 +17,6 @@
          under the License.
 -->
 
-# com.vibrationapps.vibrator
+# com.vibrationapps.vibration
 
 Plugin documentation: [doc/index.md](doc/index.md)

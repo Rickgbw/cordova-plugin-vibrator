@@ -17,7 +17,7 @@
     under the License.
 -->
 
-# com.vibrationapps.vibrator
+# com.vibrationapps.vibration
 
 This plugin provides a way to vibrate the device.
 
@@ -29,11 +29,11 @@ This plugin provides a way to vibrate the device.
 
 - Android
 
-## vibrator.vibrate
+## vibration.vibrate
 
 Vibrates the device for the specified amount of time.
 
-    vibrator.vibrate(time)
+    vibration.vibrate(time)
 
 - __time__: Milliseconds to vibrate the device. _(Number)_
 
@@ -41,10 +41,10 @@ Vibrates the device for the specified amount of time.
 ## Example
 
     // Vibrate for 2.5 seconds
-    vibrator.vibrate(2500);
+    vibration.vibrate(2500);
 
-## vibrator.cancel
+## vibration.cancel
 
 Cancel actual vibration
 
-    vibrator.cancel()
+    vibration.cancel()
