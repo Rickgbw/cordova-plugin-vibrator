@@ -41,4 +41,17 @@
             <uses-permission android:name="android.permission.VIBRATE"/>
         </config-file>
     </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Vibration">
+                <param name="ios-package" value="CDVVibration"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVVibration.h" />
+        <source-file src="src/ios/CDVVibration.m" />
+
+        <framework src="AudioToolbox.framework" weak="true" />
+    </platform>
 </plugin>
