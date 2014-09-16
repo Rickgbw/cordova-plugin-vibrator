@@ -25,6 +25,7 @@
 @interface CDVVibration : CDVPlugin {}
 
 - (void)vibrate:(CDVInvokedUrlCommand*)command;
+- (void)vibrateArr:(CDVInvokedUrlCommand*)command;
 - (void)cancel:(CDVInvokedUrlCommand*)command;
 
 @end

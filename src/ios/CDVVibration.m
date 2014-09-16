@@ -6,9 +6,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License.  You may obtain a copy of the License at
-
+ 
  http://www.apache.org/licenses/LICENSE-2.0
-
+ 
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -27,18 +27,34 @@
     
     NSMutableDictionary* dict = [NSMutableDictionary dictionary];
     NSMutableArray* arr = [NSMutableArray array ];
+    int vibracao = [[command.arguments objectAtIndex:0] intValue];
     
-    [arr addObject:[NSNumber numberWithBool:YES]]; //vibrate for 2000ms
-    [arr addObject:[NSNumber numberWithInt:50000]];
+    [arr addObject:[NSNumber numberWithBool:YES]];
+    [arr addObject:[NSNumber numberWithInt:vibracao]];
     
-    /*[arr addObject:[NSNumber numberWithBool:NO]];  //stop for 1000ms
-    [arr addObject:[NSNumber numberWithInt:1000]];
+    [dict setObject:arr forKey:@"VibePattern"];
+    [dict setObject:[NSNumber numberWithInt:1] forKey:@"Intensity"];
     
-    [arr addObject:[NSNumber numberWithBool:YES]];  //vibrate for 1000ms
-    [arr addObject:[NSNumber numberWithInt:1000]];
     
-    [arr addObject:[NSNumber numberWithBool:NO]];    //stop for 500ms
-    [arr addObject:[NSNumber numberWithInt:500]];*/
+    AudioServicesPlaySystemSoundWithVibration(4095,nil,dict);
+}
+
+- (void)vibrateArr:(CDVInvokedUrlCommand*)command
+{
+    //AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
+    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+    NSMutableArray* arr = [NSMutableArray array ];
+    NSMutableArray* vibracoes = [command.arguments objectAtIndex:0];
+    int i;
+    
+    for (i = 0; i < [vibracoes count]; i++) {
+        if(i % 2 == 0)
+            [arr addObject:[NSNumber numberWithBool:YES]];
+        else
+            [arr addObject:[NSNumber numberWithBool:NO]];
+        [arr addObject:[NSNumber numberWithInt:[[vibracoes objectAtIndex: i] intValue]]];
+    }
     
     [dict setObject:arr forKey:@"VibePattern"];
     [dict setObject:[NSNumber numberWithInt:1] forKey:@"Intensity"];
